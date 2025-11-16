@@ -208,6 +208,8 @@ __marimo__/
 *.png
 *.mp4
 *.pt
+*.pkl
+*.pickle
 #.pickle
 **/__pycache__/
 videos/
