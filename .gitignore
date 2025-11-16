@@ -214,3 +214,4 @@ __marimo__/
 **/__pycache__/
 videos/
 buffer/*
+train_01/
