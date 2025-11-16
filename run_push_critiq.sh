@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Project root (CritiQ)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Config path (default: src/config/push_config.json)
+CFG_ARG="${1:-src/config/push/train_config.json}"
+if [[ "$CFG_ARG" = /* ]]; then
+  ABS_CFG="$CFG_ARG"
+else
+  ABS_CFG="$SCRIPT_DIR/$CFG_ARG"
+fi
+
+# Ensure Python can import both src/ (for local modules) and project root (for push_config, etc.)
+export PYTHONPATH="$SCRIPT_DIR/src:$SCRIPT_DIR:${PYTHONPATH:-}"
+
+# Run from the directory where train_critiq.py lives
+cd "$SCRIPT_DIR/src"
+
+echo "[run_push_critiq] Using config: ${ABS_CFG}"
+python train_critiq.py --cfg "${ABS_CFG}"

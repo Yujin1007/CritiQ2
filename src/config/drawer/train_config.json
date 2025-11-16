@@ -1,0 +1,15 @@
+{
+  "teacher_path": "saved_models/teacher_drawer.zip",
+  "save_path": "saved_models/drawer/train_01",
+  "buffer_path": "./buffer/drawer/buffer.pkl",
+  "new_buffer_path": null,
+  "eval_its": 20,
+  "num_epoch": 100,
+  "num_cpu": 16,
+  "collect_data": false,
+  "collect_more_data": false,
+  "device": null,
+  "save_video": false,
+  "env_id": "StretchDrawer"
+}
+
